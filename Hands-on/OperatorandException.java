@@ -9,25 +9,29 @@ import java.util.*;
    Handle exceptions for invalid operators and division by zero.
 */
 
-public class OperatorandException {
-
-	public static void main(String[] args) {
-		
+public class OperatorandException 
+{
+	public static void main(String[] args) 
+	{
+		//Scanner for the input from the user
 		Scanner sc = new Scanner (System.in);
 		
+		// printing statement for the input
 		System.out.println(" Enter first number : ");
 		
 		Double num1 = sc.nextDouble();
 		
 		System.out.println(" Enter a operator( + - * / ) : ");
 		
+		// input for operator to be used
 	    char operator =  sc.next().charAt(0);
 		
         System.out.println(" Enter second number : ");
 		
+        // input for the second number
         Double num2 = sc.nextDouble();
 		
-        try
+        try    // try block to catch the exception
         {
         Double sum = num1 + num2;
         Double product = num1 * num2;
@@ -51,7 +55,7 @@ public class OperatorandException {
 
 			if (num2 == 0)
 			{
-				System.out.println(" Error num2 cannot be zero for division. Enter a valid number . ");
+				System.out.println(" Error num2 cannot be zero for division. Enter a valid number ");
 			}
 			else
 			{		
@@ -65,11 +69,9 @@ public class OperatorandException {
         }
         catch(Exception e)
         {
-        	System.out.println(" Invalid input : Enter a valid number and a operator. ");
+        	System.out.println(" Invalid input : Enter a valid number and a operator. "+ e.getMessage());
         }
-		
 		sc.close();
-
 	}
-
+	
 }
